@@ -85,7 +85,7 @@ class _LandingPageState extends State<LandingPage> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       _buildButton(context, 'ข้อสอบ', onClick: () async {
-                        //if (!_isExamTime()) return;
+                        if (!_isExamTime()) return;
 
                         /*if (!await _showExam()) {
                           showMaterialDialog(
@@ -99,7 +99,7 @@ class _LandingPageState extends State<LandingPage> {
                         launch('https://bit.ly/3bq5iA3');
                       }),
                       _buildButton(context, 'Application', onClick: () async {
-                        //if (!_isExamTime()) return;
+                        if (!_isExamTime()) return;
 
                         /*if (!await _showExam()) {
                           showMaterialDialog(
@@ -113,7 +113,7 @@ class _LandingPageState extends State<LandingPage> {
                         Navigator.pushNamed(context, HomePage.routeName);
                       }),
                       _buildButton(context, 'แบบฟอร์มส่งข้อสอบ', onClick: () {
-                        //if (!_isExamTime()) return;
+                        if (!_isExamTime()) return;
 
                         /*showMaterialDialog(
                           context,
