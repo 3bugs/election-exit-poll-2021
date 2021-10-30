@@ -82,7 +82,7 @@ class _LandingPageState extends State<LandingPage> {
                   ),
                   Padding(
                     padding: EdgeInsets.symmetric(
-                        horizontal: (width > 400 ? 0.1 : 0.05) * width),
+                        horizontal: (width > 500 ? 0.1 : 0.05) * width),
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
