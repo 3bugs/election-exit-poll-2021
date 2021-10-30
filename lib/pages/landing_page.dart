@@ -40,93 +40,96 @@ class _LandingPageState extends State<LandingPage> {
                 fit: BoxFit.cover,
               ),
             ),
-            child: Stack(
-              children: [
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.stretch,
-                  children: [
-                    Text(
-                      'สอบปลายภาค',
-                      textAlign: TextAlign.center,
-                      style: GoogleFonts.kanit(
-                          fontSize: 45.0, color: const Color(0xFFA00000)),
-                    ),
-                    const SizedBox(height: 5.0),
-                    Text(
-                      'วิชา Mobile Application Development',
-                      textAlign: TextAlign.center,
-                      style: GoogleFonts.kanit(fontSize: 25.0),
-                    ),
-                    const SizedBox(height: 5.0),
-                    Text(
-                      'CP SU 1/2564',
-                      textAlign: TextAlign.center,
-                      style: GoogleFonts.kanit(fontSize: 25.0),
-                    ),
-                  ],
-                ),
-                Align(
-                  alignment: Alignment.bottomCenter,
-                  child: Column(
-                    mainAxisSize: MainAxisSize.min,
+            child: SafeArea(
+              child: Stack(
+                children: [
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: [
-                      const CountDownTimer(),
                       Text(
-                        'ขอให้นักศึกษาทุกคนโชคดี 🎉',
+                        'สอบปลายภาค',
+                        textAlign: TextAlign.center,
+                        style: GoogleFonts.kanit(
+                            fontSize: 45.0, color: const Color(0xFFA00000)),
+                      ),
+                      const SizedBox(height: 5.0),
+                      Text(
+                        'วิชา Mobile Application Development',
+                        textAlign: TextAlign.center,
+                        style: GoogleFonts.kanit(fontSize: 25.0),
+                      ),
+                      const SizedBox(height: 5.0),
+                      Text(
+                        'CP SU 1/2564',
                         textAlign: TextAlign.center,
                         style: GoogleFonts.kanit(fontSize: 25.0),
                       ),
                     ],
                   ),
-                ),
-                Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 0.08 * width),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      _buildButton(context, 'ข้อสอบ', onClick: () async {
-                        if (!_isExamTime()) return;
-
-                        /*if (!await _showExam()) {
-                          showMaterialDialog(
-                            context,
-                            'ERROR',
-                            'อาจารย์ยังไม่เปิดข้อสอบ',
-                          );
-                          return;
-                        }*/
-
-                        launch('https://bit.ly/3bq5iA3');
-                      }),
-                      _buildButton(context, 'Application', onClick: () async {
-                        if (!_isExamTime()) return;
-
-                        /*if (!await _showExam()) {
-                          showMaterialDialog(
-                            context,
-                            'ERROR',
-                            'อาจารย์ยังไม่เปิดข้อสอบ',
-                          );
-                          return;
-                        }*/
-
-                        Navigator.pushNamed(context, HomePage.routeName);
-                      }),
-                      _buildButton(context, 'แบบฟอร์มส่งข้อสอบ', onClick: () {
-                        if (!_isExamTime()) return;
-
-                        /*showMaterialDialog(
-                          context,
-                          'ERROR',
-                          'ขออภัย เลยเวลาส่งข้อสอบแล้ว',
-                        );*/
-
-                        launch('https://forms.gle/tCLJCBhbEWYsdZTr8');
-                      }),
-                    ],
+                  Align(
+                    alignment: Alignment.bottomCenter,
+                    child: Column(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        const CountDownTimer(),
+                        Text(
+                          'ขอให้นักศึกษาทุกคนโชคดี 🎉',
+                          textAlign: TextAlign.center,
+                          style: GoogleFonts.kanit(fontSize: 25.0),
+                        ),
+                      ],
+                    ),
                   ),
-                ),
-              ],
+                  Padding(
+                    padding: EdgeInsets.symmetric(
+                        horizontal: (width > 400 ? 0.1 : 0.05) * width),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        _buildButton(context, 'ข้อสอบ', onClick: () async {
+                          if (!_isExamTime()) return;
+
+                          /*if (!await _showExam()) {
+                            showMaterialDialog(
+                              context,
+                              'ERROR',
+                              'อาจารย์ยังไม่เปิดข้อสอบ',
+                            );
+                            return;
+                          }*/
+
+                          launch('https://bit.ly/3bq5iA3');
+                        }),
+                        _buildButton(context, 'Application', onClick: () async {
+                          if (!_isExamTime()) return;
+
+                          /*if (!await _showExam()) {
+                            showMaterialDialog(
+                              context,
+                              'ERROR',
+                              'อาจารย์ยังไม่เปิดข้อสอบ',
+                            );
+                            return;
+                          }*/
+
+                          Navigator.pushNamed(context, HomePage.routeName);
+                        }),
+                        _buildButton(context, 'แบบฟอร์มส่งข้อสอบ', onClick: () {
+                          if (!_isExamTime()) return;
+
+                          /*showMaterialDialog(
+                            context,
+                            'ERROR',
+                            'ขออภัย เลยเวลาส่งข้อสอบแล้ว',
+                          );*/
+
+                          launch('https://forms.gle/tCLJCBhbEWYsdZTr8');
+                        }),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
             ),
           ),
           if (_isLoading)
