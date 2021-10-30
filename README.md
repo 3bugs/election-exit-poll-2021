@@ -1,6 +1,6 @@
 # app
 
-Final exam, CP-SU-2021
+การสอบปลายภาค วิชา Mobile Application Development ภาคต้น ปีการศึกษา 2564
 
 ## Getting Started
 
