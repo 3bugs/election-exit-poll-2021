@@ -4,8 +4,8 @@ import 'package:app/models/api_result.dart';
 import 'package:http/http.dart' as http;
 
 class Api {
-  //static const BASE_URL = 'https://cpsu-test-api.herokuapp.com';
-  static const BASE_URL = 'http://10.0.2.2:3030';
+  static const BASE_URL = 'https://cpsu-test-api.herokuapp.com';
+  //static const BASE_URL = 'http://10.0.2.2:3030';
 
   Future<dynamic> submit(
     String endPoint,
