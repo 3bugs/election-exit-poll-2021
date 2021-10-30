@@ -195,7 +195,7 @@ class _LandingPageState extends State<LandingPage> {
             child: ElevatedButton(
               onPressed: onClick,
               style: ElevatedButton.styleFrom(
-                primary: const Color(0xFF006000),
+                primary: const Color(0xAA006000),
               ),
               child: Padding(
                 padding:
